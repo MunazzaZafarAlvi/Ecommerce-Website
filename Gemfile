@@ -5,10 +5,13 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
+gem "image_processing"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "devise"
+gem "activeadmin"
+gem "sassc"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 group :development, :test do
@@ -21,3 +24,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 2.6"
