@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Log in</title>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  <%= csrf_meta_tags %>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <title>Log in</title>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
 
-<body class="bg-gradient-to-r from-pink-200 to-purple-300 h-screen flex items-center justify-center">
-  <div class="bg-white p-10 rounded-lg shadow-lg w-96">
-    <h2 class="text-4xl font-extrabold mb-6 text-pink-600 text-center">Log in</h2>
-    
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="mb-4">
-        <%= f.label :email, class: "block text-gray-700" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-pink-500" %>
+  <body class="bg-gradient-to-r from-pink-200 to-purple-300 h-screen flex items-center justify-center">
+    <div class="bg-white p-10 rounded-lg shadow-lg w-96">
+      <h2 class="text-4xl font-extrabold mb-6 text-pink-600 text-center">Log in</h2>
+      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-4">
+          <%= f.label :email, class: "block text-gray-700" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-pink-500" %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.label :password, class: "block text-gray-700" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-pink-500" %>
+        </div>
+
+        <div class="mb-4 flex items-center">
+          <%= f.check_box :remember_me, class: "mr-2" %>
+          <%= f.label :remember_me, class: "text-gray-700" %>
+        </div>
+
+        <div class="mb-6">
+          <%= f.submit "Log in", class: "w-full bg-pink-600 text-white p-2 rounded hover:bg-pink-700 transition duration-200" %>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "text-pink-500 hover:underline transition duration-200" %> |
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-pink-500 hover:underline transition duration-200" %>
       </div>
-
-      <div class="mb-4">
-        <%= f.label :password, class: "block text-gray-700" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-pink-500" %>
-      </div>
-
-      <div class="mb-4 flex items-center">
-        <%= f.check_box :remember_me, class: "mr-2" %>
-        <%= f.label :remember_me, class: "text-gray-700" %>
-      </div>
-
-      <div class="mb-6">
-        <%= f.submit "Log in", class: "w-full bg-pink-600 text-white p-2 rounded hover:bg-pink-700 transition duration-200" %>
-      </div>
-    <% end %>
-
-    <div class="text-center">
-      <%= link_to "Sign up", new_registration_path(resource_name), class: "text-pink-500 hover:underline transition duration-200" %> |
-      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-pink-500 hover:underline transition duration-200" %>
     </div>
-  </div>
-</body>
+  </body>
 </html>

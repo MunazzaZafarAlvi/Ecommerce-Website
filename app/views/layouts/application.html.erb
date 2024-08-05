@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DESIRES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-gray-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
 
-  <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <div class="flex">
-        <div class="shrink-0 flex items-center">
-          <a href="/" class="text-2xl font-bold text-pink-500">DESIRES</a>
-        </div>
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-          <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Home</a>
-          <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">About Us</a>
-          <a href="/products" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Products</a>
-          <a href="/faq" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">FAQ</a>
-        </div>
-      </div>
-      <div class="hidden sm:ml-6 sm:flex sm:items-center">
-        <div class="flex items-center space-x-4">
-          <input type="text" placeholder="Search" class="border border-gray-300 rounded-lg py-1 px-2">
-          <a href="/cart" class="relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2 13h13"></path>
-              <path d="M6 5h15l-1.5 9H8.5"></path>
-            </svg>
-            <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">3</span>
-          </a>
-          <div class="relative">
-            <button type="button" class="flex items-center space-x-2">
-              <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
-              <span class="text-gray-500">Username</span>
-            </button>
+  <body class="bg-gray-100">
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="shrink-0 flex items-center">
+              <a href="/" class="text-2xl font-bold text-pink-500">DESIRES</a>
+            </div>
+
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Home</a>
+              <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">About Us</a>
+              <a href="/products" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Products</a>
+              <a href="/faq" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">FAQ</a>
+            </div>
+          </div>
+
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <div class="flex items-center space-x-4">
+              <input type="text" placeholder="Search" class="border border-gray-300 rounded-lg py-1 px-2">
+              <a href="/cart" class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2 13h13"></path>
+                  <path d="M6 5h15l-1.5 9H8.5"></path>
+                </svg>
+      
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">3</span>
+              </a>
+
+              <div class="relative">
+                <button type="button" class="flex items-center space-x-2">
+                  <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
+                  <span class="text-gray-500">Username</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
-
-  <%= yield %>
-
-</body>
+    <%= yield %>
+  </body>
 </html>
