@@ -26,6 +26,17 @@
               <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Home</a>
               <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">About Us</a>
               <a href="/products" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">Products</a>
+              
+              <div class="relative group">
+                <button class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">
+                  Categories
+                </button>
+                <ul class="absolute hidden bg-white shadow-md group-hover:block mt-1 w-48">
+                  <li><%= link_to 'Ladies', category_products_path('Ladies'), class: "block px-4 py-2 text-gray-700 hover:bg-gray-200" %></li>
+                  <li><%= link_to 'Gents', category_products_path('Gents'), class: "block px-4 py-2 text-gray-700 hover:bg-gray-200" %></li>
+                </ul>
+              </div>
+
               <a href="/faq" class="inline-flex items-center px-1 pt-1 border-b-2 text-gray-500">FAQ</a>
             </div>
           </div>
@@ -40,7 +51,6 @@
                   <path d="M1 1h4l2 13h13"></path>
                   <path d="M6 5h15l-1.5 9H8.5"></path>
                 </svg>
-      
                 <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">3</span>
               </a>
 
@@ -56,6 +66,9 @@
       </div>
     </nav>
 
-    <%= yield %>
+    <main class="mt-16">
+      <%= yield %> 
+    </main>
   </body>
 </html>
+
