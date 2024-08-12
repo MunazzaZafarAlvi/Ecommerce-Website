@@ -10,6 +10,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "devise"
+gem "ransack"
 gem "activeadmin"
 gem "sassc"
 gem "tzinfo-data", platforms: %i[ windows jruby ]

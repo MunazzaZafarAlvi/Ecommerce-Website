@@ -43,7 +43,10 @@
 
           <div class="hidden sm:ml-6 sm:flex sm:items-center">
             <div class="flex items-center space-x-4">
-              <input type="text" placeholder="Search" class="border border-gray-300 rounded-lg py-1 px-2">
+             <%= form_with url: products_path, method: :get, local: true do %>
+              <input type="text" placeholder="Search" name="q[name_cont]" class="border border-gray-300 rounded-lg py-1 px-2">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+             <% end %>   
               <a href="/cart" class="relative">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="9" cy="21" r="1"></circle>
