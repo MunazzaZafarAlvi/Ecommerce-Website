@@ -1,7 +1,6 @@
 class OrderItem < ApplicationRecord
+  include Ransackable
+
   belongs_to :order
   belongs_to :product
-  def self.ransackable_attributes(auth_object = nil)
-    column_names
-  end
 end

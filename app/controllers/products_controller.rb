@@ -1,13 +1,15 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @ladies_products = Product.where(category: 'ladies') # Adjust the condition as per your schema
-    @gents_products = Product.where(category: 'gents')
+    if params[:category].present?
+      @products = Product.where(category: params[:category])
+    else
+      @products = Product.all
+    end
   end
 
   def show
     @category = params[:category]
-    @products = Product.joins(:category).where(categories: { name: Category.names[@category] })
+    @products = Product.joins(:category).where(categories: { name: @category })
 
     if @products.empty?
       flash[:notice] = "No products available in this category."
