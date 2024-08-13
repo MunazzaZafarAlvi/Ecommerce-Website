@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
+
   def index
-    if params[:category].present?
-      @products = Product.where(category: params[:category])
-    else
-      @products = Product.all
-    end
+    search_params= params[:q] || {}
+    @q= Product.ransack(search_params)
+
+    @pagy, @products = pagy(@q.result(distinct: true))
   end
 
   def show
