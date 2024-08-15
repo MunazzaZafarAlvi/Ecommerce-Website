@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
-
   def index
     search_params= params[:q] || {}
     @q= Product.ransack(search_params)
-
     @pagy, @products = pagy(@q.result(distinct: true))
   end
 
