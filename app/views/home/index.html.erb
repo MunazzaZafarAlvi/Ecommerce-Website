@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signed in successfully</title>
+    <title>Signed in Successfully</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -15,23 +15,26 @@
         height: 100vh;
         background-color: #f3f4f6;
       }
-      container {
+      .container {
         text-align: center;
         background: white;
         padding: 2rem;
         border-radius: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <h1 class="text-3xl font-semibold text-green-500 mb-4">Signed in successfully</h1>
+      <h1 class="text-3xl font-semibold text-green-500 mb-4">Signed in Successfully</h1>
       <p class="text-xl">Welcome to <span class="font-bold text-pink-500">DESIRES</span></p>
-  <% if customer_signed_in? %>
-    <%= button_to 'Sign out', destroy_customer_session_path, method: :delete %>
-  <% end %>
+      <% if customer_signed_in? %>
+        <%= button_to 'Sign out', destroy_customer_session_path, method: :delete, class: 'mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' %>
+      <% end %>
     </div>
   </body>
 </html>
+

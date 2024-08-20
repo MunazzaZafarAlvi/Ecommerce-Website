@@ -1,0 +1,29 @@
+<h1>Order Details</h1>
+
+<% if @order.order_items.any? %>
+  <table class="table-auto w-full text-left">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">Product Name</th>
+        <th class="px-4 py-2">Quantity</th>
+        <th class="px-4 py-2">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |item| %>
+        <tr>
+          <td class="border px-4 py-2"><%= item.product.name %></td>
+          <td class="border px-4 py-2"><%= item.quantity %></td>
+          <td class="border px-4 py-2">$<%= item.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h3 class="mt-6">Order Summary</h3>
+  <p>Total Amount: $<%= @order.total_amount %></p>
+<% else %>
+  <p>No items in this order.</p>
+<% end %>
+
+<%= link_to 'Back to Orders', orders_path, class: 'mt-4 inline-block text-blue-500' %>

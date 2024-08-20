@@ -22,5 +22,12 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'products', to: 'products#index'
   get 'products/:category', to: 'products#show', as: 'category_products'
+  get 'cart', to: 'cart#show'
   delete 'logout', to: 'sessions#destroy'
+  post '/orders/add_to_cart', to: 'orders#add_to_cart', as: 'add_to_cart'
+  resources :products, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resources :orders do
+    get 'add_to_cart', on: :collection
+  end
 end
