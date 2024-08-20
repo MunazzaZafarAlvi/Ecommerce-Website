@@ -21,4 +21,21 @@
   </div>
 <% else %>
   <p class="text-gray-600 mt-4">No products available in this category.</p>
+
+  <div class="max-w-2xl mx-auto my-8 p-4 bg-white shadow-md rounded-lg">
+  <div class="flex">
+    <% if @product.image.attached? %>
+      <%= image_tag @product.image, class: 'w-48 h-48 object-cover rounded-lg' %>
+    <% end %>
+
+    <div class="ml-6">
+      <h2 class="text-2xl font-bold mb-2"><%= @product.name %></h2>
+      <p class="text-lg mb-4"><%= number_to_currency(@product.price) %></p>
+      <p class="text-gray-700 mb-4"><%= @product.description %></p>
+      <p><strong>Size:</strong> <%= @product.size_names.join(', ') %></p>
+<%= button_to 'Add to Cart', add_to_cart_path(product_id: product.id), method: :post, class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+<%= button_to 'Add to Cart', add_to_cart_path(product_id: product.id), method: :post, class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    </div>
+  </div>
+ </div>
 <% end %>

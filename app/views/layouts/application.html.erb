@@ -63,6 +63,16 @@
                   <span class="text-gray-500">Username</span>
                 </button>
               </div>
+
+              <% if current_customer %>
+                <% if current_order %>
+                  <%= link_to order_path(current_order), class: 'cart-icon' do %>
+                    <i class="bi bi-cart" style="font-size: 24px;"></i>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <i class="bi bi-cart" style="font-size: 24px;"></i>
+              <% end %>
             </div>
           </div>
         </div>
@@ -74,4 +84,3 @@
     </main>
   </body>
 </html>
-
