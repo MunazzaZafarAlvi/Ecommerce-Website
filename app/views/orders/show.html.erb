@@ -22,8 +22,19 @@
 
   <h3 class="mt-6">Order Summary</h3>
   <p>Total Amount: $<%= @order.total_amount %></p>
+
+  <div class="text-center mt-6">
+    <%= link_to 'Proceed to Payment', new_order_payments_path(@order), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+  </div>
+
+<% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
 <% else %>
   <p>No items in this order.</p>
 <% end %>
-
-<%= link_to 'Back to Orders', orders_path, class: 'mt-4 inline-block text-blue-500' %>

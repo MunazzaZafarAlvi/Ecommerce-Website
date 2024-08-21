@@ -5,13 +5,6 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def show
-  end
-
-  def create
-    # Logic to create a new order
-  end
-
   def add_to_cart
     @product = Product.find(params[:product_id])
     @current_order = current_order
@@ -33,7 +26,6 @@ class OrdersController < ApplicationController
   end
 
   private
-
   def set_order
     @order = Order.find(params[:id])
   end
