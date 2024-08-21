@@ -29,5 +29,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :orders do
     get 'add_to_cart', on: :collection
+    resource :payment, only: [:new, :create]
   end
 end
